@@ -23,3 +23,4 @@ D:\ARI\Face Recognition\Absensi_Wajah\Face Recognition\obj\x86\Debug\Aplikasi Ab
 D:\ARI\Face Recognition\Absensi_Wajah\Face Recognition\obj\x86\Debug\Aplikasi Absensi Wajah.exe
 D:\ARI\Face Recognition\Absensi_Wajah\Face Recognition\obj\x86\Debug\Aplikasi Absensi Wajah.xml
 D:\ARI\Face Recognition\Absensi_Wajah\Face Recognition\obj\x86\Debug\Aplikasi Absensi Wajah.pdb
+D:\ARI\Face Recognition\Absensi_Wajah\Face Recognition\obj\x86\Debug\Aplikasi Absensi Wajah.vbprojAssemblyReference.cache

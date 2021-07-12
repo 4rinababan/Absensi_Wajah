@@ -186,6 +186,7 @@ Public Class Form1
                 txtBadge.Enabled = True
                 TabPage1.Enabled = True
                 txtName.Text = ""
+                txtBadge.Text = ""
                 ImageBox1.Image = Nothing
                 recFace = 10
             End If
@@ -465,6 +466,8 @@ Public Class Form1
     Public Sub New()
         InitializeComponent()
         Timer2.Start()
+        lblDate.Text = DateTime.Now.ToString("yyyy/MM/dd")
+        'DateTimePicker1.DropDownAlign = True
         'frmLogin.Close()
         'Load haarcascades for face detection
         face = New HaarCascade("haarcascade_frontalface_default.xml")
@@ -541,8 +544,15 @@ Public Class Form1
         'Show the faces procesed and recognized
         imageBoxFrameGrabber.Image = currentFrame
         label4.Text = names
+
+        Dim input = names
+        Dim Index As Integer = input.LastIndexOf(" | ")
+        If Index >= 0 Then
+            input = input.Substring(Index) ' Or index + 1 To keep slash
+        End If
+
         If Convert.ToInt32(label3.Text) = 1 Then
-            MessageBox.Show("Face Detected " + label4.Text)
+            MessageBox.Show("Face Detected " + input)
         End If
         names = ""
         'Clear the list(vector) of names

@@ -34,8 +34,6 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.label1 = New System.Windows.Forms.Label()
         Me.button1 = New System.Windows.Forms.Button()
         Me.label3 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
@@ -52,6 +50,11 @@ Partial Class Form1
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel1.SuspendLayout()
         CType(Me.pbMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbMazimize, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +76,6 @@ Partial Class Form1
         Me.Panel1.BackColor = System.Drawing.Color.DarkCyan
         Me.Panel1.Controls.Add(Me.pbMinimize)
         Me.Panel1.Controls.Add(Me.pbMazimize)
-        Me.Panel1.Controls.Add(Me.lblTime)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -102,11 +104,11 @@ Partial Class Form1
         '
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Digital-7", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(675, 2)
+        Me.lblTime.Location = New System.Drawing.Point(766, 109)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(73, 28)
+        Me.lblTime.Size = New System.Drawing.Size(27, 28)
         Me.lblTime.TabIndex = 26
-        Me.lblTime.Text = "Time..."
+        Me.lblTime.Text = "..."
         '
         'Label7
         '
@@ -138,6 +140,7 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(0, 37)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -146,8 +149,12 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.lblDate)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.groupBox1)
         Me.TabPage1.Controls.Add(Me.button1)
+        Me.TabPage1.Controls.Add(Me.lblTime)
         Me.TabPage1.Controls.Add(Me.label3)
         Me.TabPage1.Controls.Add(Me.label4)
         Me.TabPage1.Controls.Add(Me.label2)
@@ -163,32 +170,13 @@ Partial Class Form1
         '
         'groupBox1
         '
-        Me.groupBox1.Controls.Add(Me.Label6)
-        Me.groupBox1.Controls.Add(Me.label1)
-        Me.groupBox1.Location = New System.Drawing.Point(691, 125)
+        Me.groupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.groupBox1.Location = New System.Drawing.Point(691, 198)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(194, 270)
+        Me.groupBox1.Size = New System.Drawing.Size(194, 182)
         Me.groupBox1.TabIndex = 24
         Me.groupBox1.TabStop = False
-        Me.groupBox1.Text = "Training: "
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 194)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Badge"
-        '
-        'label1
-        '
-        Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(6, 155)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(41, 13)
-        Me.label1.TabIndex = 8
-        Me.label1.Text = "Name: "
+        Me.groupBox1.Text = "Calender"
         '
         'button1
         '
@@ -278,9 +266,9 @@ Partial Class Form1
         Me.ImageBox1.BackgroundImage = Global.Aplikasi_Absensi_Wajah.My.Resources.Resources.acb2ff8f4b2df5982605f86d3321ed54
         Me.ImageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ImageBox1.InitialImage = Nothing
-        Me.ImageBox1.Location = New System.Drawing.Point(6, 6)
+        Me.ImageBox1.Location = New System.Drawing.Point(761, 6)
         Me.ImageBox1.Name = "ImageBox1"
-        Me.ImageBox1.Size = New System.Drawing.Size(201, 202)
+        Me.ImageBox1.Size = New System.Drawing.Size(130, 113)
         Me.ImageBox1.TabIndex = 5
         Me.ImageBox1.TabStop = False
         '
@@ -345,6 +333,55 @@ Partial Class Form1
         'Timer3
         '
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Digital-7", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(695, 109)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 28)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Time :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Digital-7", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(687, 140)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 28)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Date :"
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Font = New System.Drawing.Font("Franklin Gothic Demi", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(766, 140)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(27, 26)
+        Me.lblDate.TabIndex = 29
+        Me.lblDate.Text = "..."
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.AllowDrop = True
+        Me.DateTimePicker1.Location = New System.Drawing.Point(5, 19)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(183, 20)
+        Me.DateTimePicker1.TabIndex = 0
+        Me.DateTimePicker1.Value = New Date(2021, 7, 12, 14, 44, 52, 0)
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(899, 401)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "DATA KARYAWAN"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,7 +404,6 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.groupBox1.ResumeLayout(False)
-        Me.groupBox1.PerformLayout()
         CType(Me.imageBoxFrameGrabber, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
@@ -392,8 +428,6 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Label7 As Label
     Private WithEvents groupBox1 As GroupBox
-    Private WithEvents Label6 As Label
-    Private WithEvents label1 As Label
     Friend WithEvents lblTime As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents pbMazimize As PictureBox
@@ -406,4 +440,9 @@ Partial Class Form1
     Private WithEvents Label9 As Label
     Private WithEvents txtName As TextBox
     Friend WithEvents Timer3 As Timer
+    Friend WithEvents lblDate As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TabPage3 As TabPage
 End Class
